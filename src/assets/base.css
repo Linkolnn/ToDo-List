@@ -1,0 +1,70 @@
+/* color */
+:root {
+  --color-background: rgb(0, 0, 0);
+  --second-color: rgba(0, 0, 0);
+  --border-color-btn: #fff;
+  /* inp */
+  --inp-font-size: 18px;
+  --inp-bg: rgba (0,0,0,0);
+  /* btn */
+  --btn-font-size: 18px;
+  --bg-btn: rgba(0, 0, 0, 0);
+  --text-color-default: #fff;
+  --done-btn-bg: #f00;
+  /* gradient */
+  --gradient: #A9DCFF, #14A0FF, #9564FA, #FEA501, #FC6F3B, #FD1A5D;
+  --second-gradient: #9564FA, #FC6F3B, #FD1A5D;
+}
+/* size */
+:root {
+  --h1: 45px;
+  --h2: 36px;
+  --h3: 24px;
+  /* text */
+  --other-text-size: 18px;
+  /* border */
+  --radius: 20px;
+  --border: 2px;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  outline: none;
+  border: none;
+  list-style-type: none;
+  scrollbar-width: none;
+}
+
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
