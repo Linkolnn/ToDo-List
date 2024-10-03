@@ -1,18 +1,20 @@
 /* color */
 :root {
   --color-background: rgb(0, 0, 0);
-  --second-color: rgba(0, 0, 0);
-  --border-color-btn: #fff;
+  --color-second-backround: rgb(255, 255, 255);
+  --second-color: rgb(0, 0, 0);
+  --border-color: #fff;
   /* inp */
+  --text-color-inp-block: rgb(0, 0, 0);
   --inp-font-size: 18px;
   --inp-bg: rgba (0,0,0,0);
   /* btn */
   --btn-font-size: 18px;
   --bg-btn: rgba(0, 0, 0, 0);
-  --text-color-default: #fff;
-  --done-btn-bg: #f00;
+  --text-color-default: rgb(255, 255, 255);
+  --done-btn-bg: rgb(255, 0, 0);
   /* gradient */
-  --gradient: #A9DCFF, #14A0FF, #9564FA, #FEA501, #FC6F3B, #FD1A5D;
+  --gradient: #A9DCFF, #14A0FF, #9564FA, #FEA501, #FC6F3B, #FD1A5D, #A9DCFF;
   --second-gradient: #9564FA, #FC6F3B, #FD1A5D;
 }
 /* size */

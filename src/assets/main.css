@@ -9,24 +9,6 @@
   font-weight: normal;
 }
 
-@media screen and (max-width: 1280px) {
-  #app {
-    padding: 0 20px 0 20px;
-  }
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;	
-  }
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 /* ---------------------------------------_text_------------------------------------- */
 
 .todo_title { 
@@ -56,27 +38,13 @@
 
 /* -------------------------------------_btn_------------------------------------- */
 .btn {
-  border: var(--border) solid var(--second-color);
+  /* border: var(--border) solid var(--border-color); */
   border-radius: var(--radius);
   color: var(--text-color-default);
   background-color: var(--second-color);
   font-size: var(--btn-font-size);
   padding: 10px 20px;
   transition: 0.5s;
-}
-
-.btn_icons {
-  border: var(--border) solid var(--second-color);
-  border-radius: var(--radius);
-  color: var(--text-color-default);
-  background-color: var(--second-color);
-  font-size: var(--btn-font-size);
-  padding: 5px 10px;
-  transition: 0.5s;
-}
-
-.btn_grd {
-  position: relative;
 }
 
 .btn_grd:before, .btn_grd:after {
@@ -94,27 +62,32 @@
 }
 
 .btn:hover { 
-  background-color: var(--second-gradient);
-  color: var(--second-color);
+  color: var(--inp-bg);
+  background: var(--color-second-backround);
   transition: 0.5s;
 }
 
 
 /* ----------------------------------_inp_------------------------------------- */
 .inp {
-  border: var(--border) solid var(--second-color);
+  /* border: var(--border) solid var(--border-color); */
   border-radius: var(--radius);
-  color: var(--text-color-default);
+  color: var(--text-color-inp-block);
   padding: 10px;
   font-size: var(--inp-font-size);
-  background-color: var(--second-color);
+  background: var(--second-color);
   transition: 0.5s;
 }
 .inp::placeholder {
-  color: #fff;
+  color: var(--text-color-default);
+}
+.inp:hover {
+  color: var(--inp-bg);
+  background: var(--color-second-backround);
 }
 .inp:focus {
-  background-color: var(--inp-bg);
+  color: var(--inp-bg);
+  background: var(--color-second-backround);
 }
 .checkbox_block {
   display: flex;
@@ -126,11 +99,14 @@
 
 
 /* --------------------------------------_gradient_-------------------------------------- */
-
-/* -----------_shd_grd_r_------------ */
-
 .shd_grd_r {
   position: relative;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 .shd_grd_r:before, .shd_grd_r:after {
@@ -141,37 +117,23 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
-  background: linear-gradient(45deg, var(--gradient));
-  background-size: 200%;
+  background: conic-gradient(from var(--angle), var(--gradient));
+  background-size: 100%;
   z-index: -1;
-  animation: gradient 5s alternate infinite;
+  animation: gradient 3s linear infinite;
 }
 
 .shd_grd_r:after {
-  filter: blur(40px);
+  filter: blur(20px);
 }
 
-/* -----------_shd_grd_------------ */
-
-.shd_grd {
-  position: relative;
-}
-
-.shd_grd::before, .shd_grd::after {
-  content: '';
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background: linear-gradient(45deg,var(--gradient));
-  background-size: 500%;
-  z-index: -1;
-  /* animation: gradient 5s alternate infinite; */
-}
-
-.shd_grd:after {
-  filter: blur(40px);
+@keyframes gradient {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
 
 /* -----------------------------------_section_-------------------------------- */
@@ -188,7 +150,6 @@
 
 .todo_container {
   position: relative;
-  z-index: 2;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -211,6 +172,7 @@
 }
 
 .todo_inp {
+  border-right: none;
   border-radius: 20px 0 0 20px;
   min-width: 190px;
   width: 100%;
@@ -222,6 +184,7 @@
 } */
 
 .todo_inp_btn {
+  border-left: none;
   padding: 10px 13px;
   border-radius: 0 20px 20px 0;
 }
@@ -249,7 +212,13 @@
 
 .todo_item {
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
+}
+
+.todo_text {
+  width: 70%;
+  vertical-align: middle;
 }
 
 .done_btn {
@@ -261,12 +230,34 @@
   background-color: var(--done-btn-bg);
 }
 
+/* -------------------------_media_--------------------------- */
+
+@media screen and (max-width: 1280px) {
+  #app {
+    padding: 0 20px 0 20px;
+  }
+}
+
 @media screen and (max-width: 850px) {
+  #app {
+    padding: 10px;
+  }
+  .section {
+    grid-template-columns: 1fr;
+  }
   .todo_lists {
     flex-direction: column;
   }
   .todo_block_list {
     width: 100%;
     min-height: 30vh;
+  }
+  .done_btn {
+    padding: 5px 10px;
+    background-color: var(--done-btn-bg);
+  }
+  .done_btn:hover {
+    color: none;
+    background-color: none;
   }
 }

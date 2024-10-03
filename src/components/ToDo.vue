@@ -50,7 +50,7 @@ const _todo_list = ref([]),
                         <i class="fa-solid fa-times"></i>
                     </button>
                 </div>
-                <div class="todo_inp_btn_block">
+                <div class="todo_inp_btn_block shd_grd_r">
                     <button class="btn todo_btn" @click="addToDo()">
                         <i class="fa-solid fa-plus"></i>
                     </button>
